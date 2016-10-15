@@ -1,0 +1,62 @@
+<div class="container">
+	<div class="image">
+		<!-- Burger image from http://www.clker.com/clipart-burger-with-space-1.html -->
+		<img class="img-responsive" src="assets/img/burger.png" alt="Burger with space for text"/>
+		<h1>Nom-Nom Burger</h1>
+	</div>
+
+
+	<div id="burger-menu">
+		<div class="col-sm-6 text-center">
+			<h2>Burgers to eat</h2>
+			
+			<ul class="list-group">
+
+			{{#each burgers}}
+			  {{#unless this.devoured}}
+			  	<li class="list-group-item new-burgers">
+					<form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+						{{this.id}}. {{this.burger_name}}
+						<input type="hidden" name="devoured" value="true">
+						<button type="submit" class="button-devour">Devour it!</button>
+					</form>
+					</li>
+			  {{/unless}}			
+			{{/each}}
+
+			</ul>
+			
+		</div>
+
+		<div class="col-sm-6 text-center">
+			<h2>Done burgers</h2>
+			<ul class="list-group">
+
+			{{#each burgers}}
+			  {{#if this.devoured}}
+			  	<li class="list-group-item done-burgers">
+					{{this.id}}. {{this.burger_name}}
+				</li>
+			  {{/if}}
+			{{/each}}
+
+			</ul>
+
+		</div>
+
+		<div class="clearfix col-sm-8 col-sm-offset-2 text-center">
+
+			<h2>Add a burger</h2>
+			<form class="create-update-form" action="burgers/create" method="POST">
+
+				<div class="form-group">
+					<label for="burgerName" class=" add-burger">Burger Name:</label>
+					<input type="text" id="burgerName" name="name" autofocus>
+				</div>
+
+				<button type="submit" class="button-add">Add Burger</button>
+			</form>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,84 @@
+body {
+	background-image: url("../img/background.png");
+}
+
+.image {
+	position: relative;	
+	margin-top: 4px;
+	margin-bottom: 8px;
+}
+
+.image img {
+	margin: auto;
+}
+
+h1 {
+	position: absolute;
+	top: 130px;
+	text-align: center;
+	width: 100%;
+	font-family: 'Rancho', cursive;
+	font-size: 54px;
+	font-weight: bold;
+	color: #FFC107;
+	text-shadow: 2px 2px 8px #795548;
+}
+
+h2 {
+	font-family: 'Rancho', cursive;
+	font-weight: bold;
+	text-shadow: 2px 2px 8px #795548;
+	font-size: 42px;
+}
+
+.new-burgers {	
+	text-align: left;
+    padding: 10px 0px 10px 40px;
+    background-color: #6cb1e3;
+    font-family: Georgia, serif;
+    font-size: 20px;
+}
+
+.done-burgers {
+    color: gray;
+    text-align: left;
+    padding: 10px 0px 10px 40px;
+    font-family: Georgia, serif;
+    font-size: 20px;
+}
+
+.add-burger {
+	font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.button-devour {
+	float: right;
+    margin-right: 10px;
+    border-radius: 6px;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+.button-add {
+    margin-right: 10px;
+    border-radius: 6px;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#burger-menu {
+	background-image: url("../img/seamless_paper_texture.png");	
+	overflow: auto;
+	padding: 10px;
+}
+
+.clearfix {
+  overflow: auto;
+  clear: both;
+}
+
+.test-border {
+	border: 1px solid red;
+}
