@@ -1,10 +1,22 @@
 {
-  "name": "Sequelized Burger",
+  "name": "sequelized_burger",
   "version": "1.0.0",
   "description": "Homework assignment that uses MySQL, Node, Express, Handlebars and Sequelize to log burgers you would like to eat",
   "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.6",
+    "moment": "^2.15.1",
+    "momentjs": "^1.1.17",
+    "mysql": "^2.11.1",
+    "sequelize": "^3.24.3"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,15 +27,5 @@
   "bugs": {
     "url": "https://github.com/froglander/sequelizedBurger/issues"
   },
-  "homepage": "https://github.com/froglander/sequelizedBurger#readme",
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "express-handlebars": "^3.0.0",
-    "method-override": "^2.3.6",
-    "moment": "^2.15.1",
-    "mysql": "^2.11.1",
-    "sequelize": "^3.24.3"
-  }
+  "homepage": "https://github.com/froglander/sequelizedBurger#readme"
 }
- 
