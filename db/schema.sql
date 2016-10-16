@@ -1,3 +1,6 @@
+CREATE SCHEMA `sequelized_burgers` ;
+
+
 CREATE SCHEMA `burgers_db` ;
 
 CREATE TABLE `burgers_db`.`burgers` (

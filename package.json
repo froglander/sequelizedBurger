@@ -1,27 +1,29 @@
 {
-  "name": "week-14-burger",
+  "name": "Sequelized Burger",
   "version": "1.0.0",
-  "description": "Homework assignment that uses MySQL, Node, Express, Handlebars and an ORM to log burgers you would like to eat",
+  "description": "Homework assignment that uses MySQL, Node, Express, Handlebars and Sequelize to log burgers you would like to eat",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/froglander/week-14-burger.git"
+    "url": "git+https://github.com/froglander/sequelizedBurger.git"
   },
   "author": "Kristi Heredia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/froglander/week-14-burger/issues"
+    "url": "https://github.com/froglander/sequelizedBurger/issues"
   },
-  "homepage": "https://github.com/froglander/week-14-burger#readme",
+  "homepage": "https://github.com/froglander/sequelizedBurger#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.6",
     "moment": "^2.15.1",
-    "mysql": "^2.11.1"
+    "mysql": "^2.11.1",
+    "sequelize": "^3.24.3"
   }
 }
+ 

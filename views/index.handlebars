@@ -2,7 +2,7 @@
 	<div class="image">
 		<!-- Burger image from http://www.clker.com/clipart-burger-with-space-1.html -->
 		<img class="img-responsive" src="assets/img/burger.png" alt="Burger with space for text"/>
-		<h1>Nom-Nom Burger</h1>
+		<h1>Nom-Nom Burger <i>II</i></h1>
 	</div>
 
 
@@ -15,9 +15,9 @@
 			{{#each burgers}}
 			  {{#unless this.devoured}}
 			  	<li class="list-group-item new-burgers">
-					<form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+					<form action="burgers/update?_method=PUT" method="POST">
 						{{this.id}}. {{this.burger_name}}
-						<input type="hidden" name="devoured" value="true">
+						<input type="hidden" name="burger_id" value={{this.id}}>
 						<button type="submit" class="button-devour">Devour it!</button>
 					</form>
 					</li>
@@ -51,7 +51,7 @@
 
 				<div class="form-group">
 					<label for="burgerName" class=" add-burger">Burger Name:</label>
-					<input type="text" id="burgerName" name="name" autofocus>
+					<input type="text" id="burgerName" name="burger_name" autofocus>
 				</div>
 
 				<button type="submit" class="button-add">Add Burger</button>
