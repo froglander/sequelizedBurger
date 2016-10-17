@@ -6,7 +6,24 @@
 	</div>
 
 
+
+
+
 	<div id="burger-menu">
+		<div class="col-sm-12 text-center">
+			<h2>Add a burger</h2>		
+			<form class="create-update-form" action="burgers/create" method="POST">
+
+				<div class="form-group">
+					<label for="burgerName" class=" add-burger">Burger Name:</label>
+					<input type="text" id="burgerName" name="burger_name" autofocus>
+					<button type="submit" class="button-add">Add Burger</button>
+				</div>				
+			</form>
+
+		</div>
+		<div class="clearfix"><hr/></div>
+
 		<div class="col-sm-6 text-center">
 			<h2>Burgers to eat</h2>
 			
@@ -44,19 +61,6 @@
 
 		</div>
 
-		<div class="clearfix col-sm-8 col-sm-offset-2 text-center">
-
-			<h2>Add a burger</h2>
-			<form class="create-update-form" action="burgers/create" method="POST">
-
-				<div class="form-group">
-					<label for="burgerName" class=" add-burger">Burger Name:</label>
-					<input type="text" id="burgerName" name="burger_name" autofocus>
-				</div>
-
-				<button type="submit" class="button-add">Add Burger</button>
-			</form>
-
-		</div>
+		
 	</div>
 </div>
