@@ -4,6 +4,7 @@
 var express = require('express');
 var router = express.Router();
 var Burger = require('../models/')["Burger"];
+var Customer = require('../models/')["Customer"];
 var moment = require('moment');
 
 // Redirect the root route '/' to /burgers
@@ -13,7 +14,7 @@ router.get('/', function(req, res) {
 
 // At the default /burgers route, use the burger model to retrieve all records
 router.get('/burgers', function(req, res) {
-	Burger.findAll()
+	Burger.findAll({include:{model: Customer}})
 	.then(function(burgers) {
 		console.log(burgers);
 		return res.render('index', {burgers})
@@ -33,15 +34,20 @@ router.post('/burgers/create', function(req, res) {
 // This is the route used to update a record based on its id, it uses 'put' rather than
 // 'post' since it is an update
 router.put('/burgers/update', function(req, res) {
-
-	Burger.findOne({where:{id: req.body.burger_id}})
-	.then(function(devourBurger) {
-		return devourBurger.updateAttributes({
-			devoured: true
-		}).then(function() {
-			res.redirect('/burgers');	
+	Customer.create({customer_name: req.body.customer_name})
+	.then(function(myCustomer) {
+		return Burger.findOne({where:{id: req.body.burger_id}})
+		.then(function(devourBurger) {
+			return devourBurger.setCustomer(myCustomer)
+			.then(function() {
+				return devourBurger.updateAttributes({
+					devoured: true
+				}).then(function() {
+					res.redirect('/burgers');	
+				})
+			})
 		})
-	});
+	})
 });
 
 module.exports = router;

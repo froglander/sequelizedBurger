@@ -32,10 +32,16 @@
 			{{#each burgers}}
 			  {{#unless this.devoured}}
 			  	<li class="list-group-item new-burgers">
-					<form action="burgers/update?_method=PUT" method="POST">
-						{{this.id}}. {{this.burger_name}}
-						<input type="hidden" name="burger_id" value={{this.id}}>
-						<button type="submit" class="button-devour">Devour it!</button>
+			  	{{this.id}}. {{this.burger_name}}
+					<form action="burgers/update?_method=PUT" method="POST" class="form-inline">
+						<div class="form-group devour-form">						
+							<input type="hidden" name="burger_id" value={{this.id}}>
+							<!-- <div class="col-sm-2 col-sm-offset-3"> -->
+							<label class="sr-only" for="customerName">Customer name</label>
+							<input type="text" name="customer_name" id="customerName" class="form-control" placeholder="Customer name">
+							<!-- </div> -->
+							<button type="submit" class="button-devour btn btn-default">Nom-Nom!</button>
+						</div>
 					</form>
 					</li>
 			  {{/unless}}			
@@ -52,7 +58,8 @@
 			{{#each burgers}}
 			  {{#if this.devoured}}
 			  	<li class="list-group-item done-burgers">
-					{{this.id}}. {{this.burger_name}}
+					{{this.id}}. {{this.burger_name}}  
+					{{#if this.Customer.customer_name}} was eaten by {{this.Customer.customer_name}} {{/if}}
 				</li>
 			  {{/if}}
 			{{/each}}
@@ -64,3 +71,5 @@
 		
 	</div>
 </div>
+<footer class="text-center">Copyright 2016 <a href="https://github.com/froglander/sequelizedBurger">Github Repo</a>
+</footer>
